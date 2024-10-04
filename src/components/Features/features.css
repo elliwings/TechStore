@@ -1,0 +1,31 @@
+.features {
+  margin-top: 24px;
+
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+.features hr {
+  margin: 0;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 20px;
+}
+
+.featur-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.feature-info h3 {
+  margin: 0;
+}
+
+.feature-info p {
+  margin: 0;
+}

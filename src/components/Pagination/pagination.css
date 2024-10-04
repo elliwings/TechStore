@@ -1,0 +1,78 @@
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  padding: 0;
+  gap: 20px;
+
+  width: 100%;
+  height: auto;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.pagination-arrow {
+  padding: 10px 15px;
+  margin: 0 5px;
+
+  color: #333;
+  font-size: 16px;
+
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-arrow:hover {
+  background-color: #ff6951;
+  color: white;
+}
+
+.pagination-arrow:disabled {
+  background-color: #e0e0e0;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.pagination-arrow:disabled:hover {
+  background-color: #e0e0e0;
+  color: #888;
+}
+
+.pagination-btn {
+  padding: 10px 15px;
+  margin: 0 5px;
+
+  color: #333;
+  font-size: 16px;
+
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-btn:hover {
+  background-color: #ff6951;
+  color: white;
+}
+
+.pagination-btn.active {
+  background-color: #ff6951;
+  color: white;
+  border-color: #ff6951;
+}
+
+.pagination-btn:focus {
+  outline: none;
+}

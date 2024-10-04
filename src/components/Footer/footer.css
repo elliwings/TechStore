@@ -1,0 +1,49 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 70px;
+  padding: 30px;
+  gap: 30px;
+
+  background-color: #333;
+  color: white;
+}
+
+.shop-info {
+  width: 40%;
+}
+
+.shop-info p {
+  margin-top: 28px;
+}
+
+.social-networks {
+  display: flex;
+  padding: 0;
+  margin-top: 28px;
+  margin-bottom: 0;
+  gap: 14px;
+}
+
+.footer-links {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  column-gap: 50px;
+}
+
+.footer-column h3 {
+  margin-top: 0;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.footer-column ul li {
+  margin-top: 8px;
+}
