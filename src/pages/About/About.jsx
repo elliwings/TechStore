@@ -1,15 +1,17 @@
-import './about.css';
+import styles from './about.module.css';
 
 import { SPECIALITIES } from '../../Data/specialitiesData';
 import Speciality from '../../components/Speciality/Speciality';
 
 function About() {
   return (
-    <div className='about-us'>
-      <div className='info-section'>
-        <h1 className='title'>About Us</h1>
-        <span className='highlight'>Who we are and why we do what we do!</span>
-        <p className='description'>
+    <div className={styles.aboutUs}>
+      <div className={styles.infoSection}>
+        <h1 className={styles.title}>About Us</h1>
+        <span className={styles.highlight}>
+          Who we are and why we do what we do!
+        </span>
+        <p className={styles.description}>
           With 12 years of experience in the tech industry, TechElli has been
           providing customers with the latest gadgets and reliable service. Our
           commitment to quality and customer satisfaction has made us a trusted

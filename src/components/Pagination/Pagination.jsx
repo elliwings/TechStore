@@ -1,4 +1,5 @@
-import './pagination.css';
+import styles from './pagination.module.css';
+import classNames from 'classnames';
 
 import { useState } from 'react';
 
@@ -26,17 +27,17 @@ const Pagination = () => {
 
   return (
     <div>
-      <ul className='products'>
+      <ul className={styles.products}>
         {currentItems.map((product) => (
           <li key={product.id}>
             <ShopProduct data={product} />
           </li>
         ))}
       </ul>
-      <div className='pagination'>
+      <div className={styles.pagination}>
         <button
           onClick={() => handlePageChange(currentPage - 1)}
-          className='pagination-arrow'
+          className={styles.paginationArrow}
           disabled={currentPage === 1}
         >
           &#8592;
@@ -46,9 +47,9 @@ const Pagination = () => {
           <button
             key={index}
             onClick={() => handlePageChange(index + 1)}
-            className={`pagination-btn ${
-              currentPage === index + 1 ? 'active' : ''
-            }`}
+            className={classNames(styles.paginationBtn, {
+              [styles.active]: currentPage === index + 1,
+            })}
           >
             {index + 1}
           </button>
@@ -56,7 +57,7 @@ const Pagination = () => {
 
         <button
           onClick={() => handlePageChange(currentPage + 1)}
-          className='pagination-arrow'
+          className={styles.paginationArrow}
           disabled={currentPage === totalPages}
         >
           &#8594;

@@ -1,4 +1,5 @@
-import './navbar.css';
+import styles from './navbar.module.css';
+import classNames from 'classnames';
 
 import logo from '../../assets/logos/logo.png';
 
@@ -8,35 +9,41 @@ import { Link, NavLink } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <div className='navbar'>
+    <header className={styles.navbar}>
       <Link to='/'>
         <img src={logo} alt='logo' />
       </Link>
-      <div className='links'>
+      <div className={styles.links}>
         <NavLink
           to='/'
-          className={({ isActive }) => (isActive ? 'active' : '')}
+          className={({ isActive }) =>
+            classNames(styles.link, { [styles.active]: isActive })
+          }
         >
           Shop
         </NavLink>
         <NavLink
           to='about'
-          className={({ isActive }) => (isActive ? 'active' : '')}
+          className={({ isActive }) =>
+            classNames(styles.link, { [styles.active]: isActive })
+          }
         >
           About
         </NavLink>
         <NavLink
           to='faq'
-          className={({ isActive }) => (isActive ? 'active' : '')}
+          className={({ isActive }) =>
+            classNames(styles.link, { [styles.active]: isActive })
+          }
         >
           FAQ
         </NavLink>
-        <span className='line'></span>
-        <Link to='cart'>
-          <ShoppingCart size={32} />
+        <span className={styles.line}></span>
+        <Link to='cart' className={styles.cart}>
+          <ShoppingCart size={32} color='black' />
         </Link>
       </div>
-    </div>
+    </header>
   );
 }
 

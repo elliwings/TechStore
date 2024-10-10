@@ -1,4 +1,4 @@
-import './filter.css';
+import styles from './filter.module.css';
 
 import { Switch } from '@mui/material';
 
@@ -26,9 +26,9 @@ function Filter() {
   };
 
   return (
-    <div className='filter-block'>
+    <div className={styles.filterBlock}>
       <div>Show all products: {amountDisplayedProducts()}</div>
-      <div className='filter'>
+      <div className={styles.filter}>
         <div>
           Show image only
           <Switch
@@ -37,12 +37,12 @@ function Filter() {
             inputProps={{ 'aria-label': 'controlled' }}
           />
         </div>
-        <div className='sort'>
+        <div className={styles.sort}>
           <label htmlFor='sort'>Sort by:</label>
           <select
             name='sort'
             id='sort'
-            className='select'
+            className={styles.select}
             onChange={handleSortChange}
           >
             <option value='Increase'>Price Increase</option>

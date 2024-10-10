@@ -1,4 +1,4 @@
-import './cart-item.css';
+import styles from './cart-item.module.css';
 
 import noPhoto from '../../assets/products/no-image-available.jpg';
 
@@ -12,18 +12,30 @@ function CartItem({ data }) {
     useContext(ShopContext);
 
   return (
-    <div className='cart-item'>
-      <img src={productImage ? productImage : noPhoto} alt={productName} />
+    <div className={styles.cartItem}>
+      <img
+        className={styles.image}
+        src={productImage ? productImage : noPhoto}
+        alt={productName}
+      />
       <div>
         <h2>{productName}</h2>
         <p>${price}</p>
-        <div className='quantity-display'>
-          <button onClick={() => removeFromCart(id)}> - </button>
+        <div className={styles.quantityDisplay}>
+          <button
+            className={styles.btnQuantity}
+            onClick={() => removeFromCart(id)}
+          >
+            -
+          </button>
           <input
+            className={styles.inputQuantity}
             value={cartItems[id]}
             onChange={(e) => updateCartItemCount(Number(e.target.value), id)}
           />
-          <button onClick={() => addToCart(id)}> + </button>
+          <button className={styles.btnQuantity} onClick={() => addToCart(id)}>
+            +
+          </button>
         </div>
       </div>
     </div>

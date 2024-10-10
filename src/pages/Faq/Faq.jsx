@@ -1,4 +1,4 @@
-import './faq.css';
+import styles from './faq.module.css';
 
 import faq from '../../assets/backgrounds/faq.jpg';
 
@@ -8,8 +8,8 @@ import FAQItem from '../../components/FAQItem/FAQItem';
 function Faq() {
   return (
     <>
-      <img src={faq} alt='faq' className='faq-image' />
-      <div className='faq-list'>
+      <img src={faq} alt='faq' className={styles.faqImage} />
+      <div className={styles.faqList}>
         {FAQS.map((faqitem) => (
           <FAQItem
             key={faqitem.id}

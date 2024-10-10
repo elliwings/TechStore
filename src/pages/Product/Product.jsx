@@ -1,4 +1,4 @@
-import './product.css';
+import styles from './product.module.css';
 
 import { useParams } from 'react-router-dom';
 
@@ -7,6 +7,7 @@ import { ProductsContext } from '../../context/products-context';
 import { ShopContext } from '../../context/shop-context';
 
 import Features from '../../components/Features/Features';
+import classNames from 'classnames';
 
 function Product() {
   const { id } = useParams();
@@ -21,24 +22,29 @@ function Product() {
   }
 
   return (
-    <div className='product-info'>
-      <div className='product-image'>
+    <div className={styles.productInfo}>
+      <div className={styles.productImage}>
         <img src={product.productImage} alt={product.productName} />
       </div>
-      <div className='right-panel'>
-        <h2 className='product-title'>{product.productName}</h2>
-        <div className='additional-info'>
-          <p className='product-reviews'>({product.reviews} Reviews)</p>
-          <p className={product.inStock === true ? 'in-stock' : 'out-of-stock'}>
+      <div className={styles.rightPanel}>
+        <h2 className={styles.productTitle}>{product.productName}</h2>
+        <div className={styles.additionalInfo}>
+          <p className={styles.productReviews}>({product.reviews} Reviews)</p>
+          <p
+            className={classNames({
+              [styles.inStock]: product.inStock,
+              [styles.outOfStock]: !product.inStock,
+            })}
+          >
             {product.inStock === true && 'In Stock'}
             {product.inStock != true && 'Out of stock'}
           </p>
         </div>
-        <b className='product-price'>${product.price}</b>
+        <b className={styles.productPrice}>${product.price}</b>
         <p>{product.description}</p>
-        <hr className='gray-line' />
+        <hr className={styles.grayLine} />
         <button
-          className='buy-now'
+          className={styles.buyNow}
           disabled={!product.inStock}
           onClick={() => addToCart(product.id)}
         >

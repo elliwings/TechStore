@@ -10,15 +10,15 @@
   color: white;
 }
 
-.shop-info {
+.shopInfo {
   width: 40%;
 }
 
-.shop-info p {
+.shopDescription {
   margin-top: 28px;
 }
 
-.social-networks {
+.socialNetworks {
   display: flex;
   padding: 0;
   margin-top: 28px;
@@ -26,18 +26,18 @@
   gap: 14px;
 }
 
-.footer-links {
+.footerLinks {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: max-content;
   column-gap: 50px;
 }
 
-.footer-column h3 {
+.columnTitle {
   margin-top: 0;
 }
 
-.footer-column a {
+.footerColumn a {
   text-decoration: none;
   color: white;
   font-weight: 300;

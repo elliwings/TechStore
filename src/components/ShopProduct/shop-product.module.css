@@ -46,13 +46,13 @@
   object-fit: contain;
 }
 
-.product .description {
+.description {
   text-align: center;
   font-size: 18px;
 }
 
-.addToCartBttn,
-.notAvailableBttn {
+.addToCartBtn,
+.notAvailableBtn {
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
@@ -68,12 +68,13 @@
   border-radius: 20px;
 }
 
-.notAvailableBttn {
+.notAvailableBtn {
   border: 2px solid lightgray;
   margin-top: 5px;
+  cursor: not-allowed;
 }
 
-.addToCartBttn:hover {
+.addToCartBtn:hover {
   background-color: rgb(19, 19, 19);
   color: white;
   cursor: pointer;

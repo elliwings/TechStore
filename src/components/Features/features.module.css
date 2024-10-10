@@ -16,16 +16,16 @@
   gap: 20px;
 }
 
-.featur-info {
+.featureInfo {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.feature-info h3 {
+.featureInfo h3 {
   margin: 0;
 }
 
-.feature-info p {
+.featureInfo p {
   margin: 0;
 }

@@ -1,4 +1,4 @@
-import './cart.css';
+import styles from './cart.module.css';
 
 import { PRODUCTS } from '../../Data/products';
 
@@ -12,7 +12,7 @@ function Cart() {
   const { cartItems, getTotalCartAmount } = useContext(ShopContext);
   const totalAmount = getTotalCartAmount();
   return (
-    <div className='cart'>
+    <div className={styles.cart}>
       <div>
         <h1>Your Cart Items {totalAmount === 0 && 'is empty'}</h1>
       </div>

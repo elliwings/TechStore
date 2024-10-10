@@ -1,0 +1,20 @@
+.specialty {
+  font-size: 16px;
+  margin-top: 58px;
+}
+
+.title {
+  text-align: center;
+  font-weight: 500;
+  font-size: 26px;
+}
+
+.description {
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.bgImage {
+  width: 100%;
+  margin: 12px 0;
+}

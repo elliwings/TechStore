@@ -1,4 +1,5 @@
-import './checkout.css';
+import styles from './checkout.module.css';
+import classNames from 'classnames';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -11,15 +12,19 @@ function Checkout({ totalAmount }) {
   const { clearAllCart } = useContext(ShopContext);
 
   return (
-    <div className='checkout'>
-      <p>Subtotal: ${totalAmount}</p>
-      <div className='buttons'>
-        <button onClick={() => navigate('/')}>Continue Shopping</button>
+    <div className={styles.checkout}>
+      <p className={styles.subtotal}>Subtotal: ${totalAmount}</p>
+      <div className={styles.buttons}>
+        <button className={styles.btnCart} onClick={() => navigate('/')}>
+          Continue Shopping
+        </button>
         {totalAmount > 0 && (
-          <button onClick={() => clearAllCart()}>Clear All Cart</button>
+          <button className={styles.btnCart} onClick={() => clearAllCart()}>
+            Clear All Cart
+          </button>
         )}
         {totalAmount > 0 && (
-          <button className='order' disabled>
+          <button className={classNames(styles.btnCart, styles.order)} disabled>
             Order
           </button>
         )}

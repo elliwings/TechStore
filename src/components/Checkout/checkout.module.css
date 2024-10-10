@@ -2,7 +2,7 @@
   margin-bottom: 80px;
 }
 
-.checkout p {
+.subtotal {
   text-align: center;
   font-size: 24px;
   font-weight: 700;
@@ -14,7 +14,7 @@
   margin-top: 30px;
 }
 
-.buttons button {
+.btnCart {
   width: 150px;
   height: 50px;
 
@@ -27,6 +27,6 @@
   cursor: pointer;
 }
 
-.buttons .order {
+.order {
   cursor: not-allowed;
 }

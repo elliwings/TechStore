@@ -1,4 +1,4 @@
-.cart-item {
+.cartItem {
   display: flex;
   align-items: center;
   margin: 30px;
@@ -12,20 +12,20 @@
   border-radius: 25px;
 }
 
-.cart-item img {
+.image {
   width: 200px;
   height: 200px;
   object-fit: contain;
 }
 
-.quantity-display {
+.quantityDisplay {
   display: flex;
   align-items: center;
   margin: 20px 0;
   gap: 10px;
 }
 
-.quantity-display button {
+.btnQuantity {
   font-size: 18px;
   color: white;
 
@@ -41,12 +41,12 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.quantity-display button:hover {
+.btnQuantity:hover {
   background-color: #e0624e;
   transform: translateY(-2px);
 }
 
-.quantity-display input {
+.inputQuantity {
   width: 50px;
   height: 40px;
 
@@ -58,6 +58,6 @@
   outline: none;
 }
 
-.quantity-display input:focus {
+.inputQuantity:focus {
   border-color: #e0624e;
 }

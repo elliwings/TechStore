@@ -1,4 +1,4 @@
-import './shop-product.css';
+import styles from './shop-product.module.css';
 
 import noPhoto from '../../assets/products/no-image-available.jpg';
 
@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 import { useContext } from 'react';
 import { ShopContext } from '../../context/shop-context';
+import classNames from 'classnames';
 
 function ShopProduct({ data }) {
   const { id, productImage, productName, price, inStock } = data;
@@ -15,21 +16,24 @@ function ShopProduct({ data }) {
   const cartItemAmount = cartItems[id];
 
   return (
-    <div className='product'>
+    <div className={styles.product}>
       <Link
         to={`/product/${id}`}
         style={{ textDecoration: 'none', color: 'black' }}
       >
-        <div className='image'>
+        <div className={styles.image}>
           <img src={productImage ? productImage : noPhoto} alt={productName} />
         </div>
-        <div className='description'>
+        <div className={styles.description}>
           <h2>{productName}</h2>
           <p>${price}</p>
         </div>
       </Link>
       <button
-        className={inStock ? 'addToCartBttn' : 'notAvailableBttn'}
+        className={classNames({
+          [styles.addToCartBtn]: inStock,
+          [styles.notAvailableBtn]: !inStock,
+        })}
         onClick={() => addToCart(id)}
         disabled={!inStock}
       >

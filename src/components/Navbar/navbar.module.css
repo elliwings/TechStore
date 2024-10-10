@@ -14,9 +14,13 @@
   align-items: center;
 }
 
-.links a {
-  margin-left: 20px;
-  margin-right: 40px;
+.links:nth-child(3) {
+  margin-right: 0;
+}
+
+.link {
+  margin-left: 40px;
+  margin-right: 0px;
 
   font-size: 25px;
 
@@ -24,15 +28,9 @@
   color: black;
 }
 
-.links a:last-child {
+.cart {
   display: flex;
   justify-content: center;
-  margin-right: 0;
-}
-
-.line {
-  height: 40px;
-  border-right: 2px rgb(76, 75, 75) solid;
 }
 
 .active {
@@ -40,4 +38,10 @@
   padding-bottom: 5px;
 
   font-weight: bold;
+}
+
+.line {
+  height: 40px;
+  border-right: 2px rgb(76, 75, 75) solid;
+  margin: 0 20px;
 }

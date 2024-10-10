@@ -1,4 +1,5 @@
-import './faq-item.css';
+import styles from './faq-item.module.css';
+import classNames from 'classnames';
 
 import { useState } from 'react';
 import { Plus, X } from 'phosphor-react';
@@ -11,25 +12,31 @@ const FAQItem = ({ id, question, answer }) => {
   };
 
   return (
-    <div className='faq-item'>
-      <div className='faq-question'>
-        <div className='faq-number-question'>
+    <div className={styles.faqItem}>
+      <div className={styles.faqQuestion}>
+        <div className={styles.faqNumberQuestion}>
           <div>
-            <span className='faq-number'>
+            <span className={styles.faqNumber}>
               {id <= 9 && `0${id}`}
               {id > 9 && id}
             </span>
           </div>
-          <span className='faq-name'>{question}</span>
+          <span className={styles.faqName}>{question}</span>
         </div>
-        <button onClick={toggleOpen} className='faq-icon'>
-          <span>
+        <button onClick={toggleOpen} className={styles.faqBtn}>
+          <span className={styles.faqIcon}>
             {isOpen && <X size={20} color='white' />}
             {!isOpen && <Plus size={20} color='white' />}
           </span>
         </button>
       </div>
-      <div className={`faq-answer ${isOpen ? 'open' : ''}`}>{answer}</div>
+      <div
+        className={classNames(styles.faqAnswer, {
+          [styles.faqOpen]: isOpen,
+        })}
+      >
+        {answer}
+      </div>
     </div>
   );
 };

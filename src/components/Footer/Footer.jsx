@@ -1,4 +1,4 @@
-import './footer.css';
+import styles from './footer.module.css';
 
 import logo from './../../assets/logos/logo-footer.png';
 
@@ -13,15 +13,15 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <div className='footer'>
-      <div className='shop-info'>
+    <footer className={styles.footer}>
+      <div className={styles.shopInfo}>
         <img src={logo} alt='logo' />
-        <p>
+        <p className={styles.shopDescription}>
           Welcome to TECHELLI, where technology meets your everyday needs! We
           are a premier electronics store, committed to offering gadgets and
           services to enhance your lifestyle with innovation.
         </p>
-        <ul className='social-networks'>
+        <ul className={styles.socialNetworks}>
           <li>
             <a href='#'>
               <FacebookLogo size={40} color='white' />
@@ -44,9 +44,9 @@ function Footer() {
           </li>
         </ul>
       </div>
-      <div className='footer-links'>
-        <div className='footer-column'>
-          <h3>Categories</h3>
+      <div className={styles.footerLinks}>
+        <div className={styles.footerColumn}>
+          <h3 className={styles.columnTitle}>Categories</h3>
           <ul>
             <li>
               <a href='#'>Smartphones</a>
@@ -65,8 +65,8 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className='footer-column'>
-          <h3>Shopping</h3>
+        <div className={styles.footerColumn}>
+          <h3 className={styles.columnTitle}>Shopping</h3>
           <ul>
             <li>
               <a href='#'>Payments</a>
@@ -82,8 +82,8 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className='footer-column'>
-          <h3>Pages</h3>
+        <div className={styles.footerColumn}>
+          <h3 className={styles.columnTitle}>Pages</h3>
           <ul>
             <li>
               <Link to='/'>Shop page</Link>
@@ -96,8 +96,8 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className='footer-column'>
-          <h3>Customer care</h3>
+        <div className={styles.footerColumn}>
+          <h3 className={styles.columnTitle}>Customer care</h3>
           <ul>
             <li>
               <a href='#'>Help center</a>
@@ -117,7 +117,7 @@ function Footer() {
           </ul>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 
