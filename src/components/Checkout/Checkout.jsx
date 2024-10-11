@@ -3,13 +3,12 @@ import classNames from 'classnames';
 
 import { useNavigate } from 'react-router-dom';
 
-import { useContext } from 'react';
-import { ShopContext } from '../../context/shop-context';
+import useShop from '../../hooks/useShop';
 
 function Checkout({ totalAmount }) {
   const navigate = useNavigate();
 
-  const { clearAllCart } = useContext(ShopContext);
+  const { clearAllCart } = useShop();
 
   return (
     <div className={styles.checkout}>

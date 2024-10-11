@@ -10,6 +10,7 @@ import ShopContextProvider from './context/shop-context';
 import ProductsContextProvider from './context/products-context';
 import Faq from './pages/Faq/Faq';
 import About from './pages/About/About';
+import Error from './pages/Error/Error';
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: '/',
+        path: 'shop',
         element: <Shop />,
       },
       {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: 'faq',
         element: <Faq />,
+      },
+      {
+        path: '*',
+        element: <Error />,
       },
     ],
   },

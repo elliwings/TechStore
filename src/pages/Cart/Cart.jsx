@@ -2,14 +2,13 @@ import styles from './cart.module.css';
 
 import { PRODUCTS } from '../../Data/products';
 
-import { useContext } from 'react';
-import { ShopContext } from '../../context/shop-context';
+import useShop from '../../hooks/useShop';
 
 import CartItem from '../../components/CartItem/CartItem';
 import Checkout from '../../components/Checkout/Checkout';
 
 function Cart() {
-  const { cartItems, getTotalCartAmount } = useContext(ShopContext);
+  const { cartItems, getTotalCartAmount } = useShop();
   const totalAmount = getTotalCartAmount();
   return (
     <div className={styles.cart}>

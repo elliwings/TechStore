@@ -1,28 +1,66 @@
 import styles from './filter.module.css';
-
 import { Switch } from '@mui/material';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-import { useContext } from 'react';
-import { ProductsContext } from '../../context/products-context';
+import { useSearchParams } from 'react-router-dom';
+
+import useProducts from '../../hooks/useProducts';
 
 function Filter() {
   const [checked, setChecked] = useState(false);
+
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const {
     amountDisplayedProducts,
     filterProductsByImage,
     sortProductsByPrice,
-  } = useContext(ProductsContext);
+  } = useProducts();
+
+  const category = searchParams.get('category') || '';
+  const currentSort = searchParams.get('sort') || '';
+
+  useEffect(() => {
+    const newParams = new URLSearchParams();
+    const currentPage = searchParams.get('page') || '1';
+    newParams.set('page', currentPage);
+    setSearchParams(newParams);
+  }, []);
+
+  const updateSearchParams = (newParams) => {
+    const currentPage = searchParams.get('page') || '1';
+    newParams.set('page', currentPage);
+    setSearchParams(newParams);
+  };
 
   const handleChange = (event) => {
-    setChecked(event.target.checked);
-    filterProductsByImage(event.target.checked);
+    const isChecked = event.target.checked;
+    setChecked(isChecked);
+    filterProductsByImage(isChecked);
+
+    const newParams = new URLSearchParams(searchParams);
+    if (isChecked) {
+      newParams.set('category', 'by-image');
+    } else {
+      newParams.delete('category');
+    }
+
+    updateSearchParams(newParams);
   };
 
   const handleSortChange = (event) => {
-    sortProductsByPrice(event.target.value);
+    const sortOrder = event.target.value;
+    sortProductsByPrice(sortOrder);
+
+    const newParams = new URLSearchParams(searchParams);
+    newParams.set('sort', sortOrder);
+
+    if (category) {
+      newParams.set('category', category);
+    }
+
+    updateSearchParams(newParams);
   };
 
   return (
@@ -43,10 +81,11 @@ function Filter() {
             name='sort'
             id='sort'
             className={styles.select}
+            value={currentSort}
             onChange={handleSortChange}
           >
-            <option value='Increase'>Price Increase</option>
-            <option value='Decrease'>Price Decrease</option>
+            <option value='increase'>Price Increase</option>
+            <option value='decrease'>Price Decrease</option>
           </select>
         </div>
       </div>

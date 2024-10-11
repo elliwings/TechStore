@@ -1,17 +1,16 @@
 import styles from './shop-product.module.css';
+import classNames from 'classnames';
 
 import noPhoto from '../../assets/products/no-image-available.jpg';
 
 import { Link } from 'react-router-dom';
 
-import { useContext } from 'react';
-import { ShopContext } from '../../context/shop-context';
-import classNames from 'classnames';
+import useShop from '../../hooks/useShop';
 
 function ShopProduct({ data }) {
   const { id, productImage, productName, price, inStock } = data;
 
-  const { cartItems, addToCart } = useContext(ShopContext);
+  const { cartItems, addToCart } = useShop();
 
   const cartItemAmount = cartItems[id];
 

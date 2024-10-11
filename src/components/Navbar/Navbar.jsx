@@ -10,12 +10,12 @@ import { Link, NavLink } from 'react-router-dom';
 function Navbar() {
   return (
     <header className={styles.navbar}>
-      <Link to='/'>
+      <Link to='shop'>
         <img src={logo} alt='logo' />
       </Link>
       <div className={styles.links}>
         <NavLink
-          to='/'
+          to='shop'
           className={({ isActive }) =>
             classNames(styles.link, { [styles.active]: isActive })
           }

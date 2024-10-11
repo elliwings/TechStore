@@ -2,9 +2,8 @@ import styles from './product.module.css';
 
 import { useParams } from 'react-router-dom';
 
-import { useContext } from 'react';
-import { ProductsContext } from '../../context/products-context';
-import { ShopContext } from '../../context/shop-context';
+import useProducts from '../../hooks/useProducts';
+import useShop from '../../hooks/useShop';
 
 import Features from '../../components/Features/Features';
 import classNames from 'classnames';
@@ -12,8 +11,8 @@ import classNames from 'classnames';
 function Product() {
   const { id } = useParams();
 
-  const { products } = useContext(ProductsContext);
-  const { addToCart } = useContext(ShopContext);
+  const { products } = useProducts();
+  const { addToCart } = useShop();
 
   const product = products.find((product) => product.id == id);
 

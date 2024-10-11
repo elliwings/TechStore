@@ -2,14 +2,13 @@ import styles from './cart-item.module.css';
 
 import noPhoto from '../../assets/products/no-image-available.jpg';
 
-import { useContext } from 'react';
-import { ShopContext } from '../../context/shop-context';
+import useShop from '../../hooks/useShop';
 
 function CartItem({ data }) {
   const { id, productImage, productName, price } = data;
 
   const { cartItems, addToCart, removeFromCart, updateCartItemCount } =
-    useContext(ShopContext);
+    useShop();
 
   return (
     <div className={styles.cartItem}>
